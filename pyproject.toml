@@ -25,6 +25,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov"]
 
+[project.scripts]
+legal-timeline = "legal_timeline.cli:main"
+
 [project.urls]
 Homepage = "https://github.com/your-org/legal-timeline"
 
