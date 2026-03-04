@@ -24,9 +24,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov"]
+visualisation = ["networkx>=3.0", "matplotlib>=3.5"]
 
 [project.scripts]
 legal-timeline = "legal_timeline.cli:main"
+visualise_dates = "legal_timeline.visualize_cli:main"
 
 [project.urls]
 Homepage = "https://github.com/your-org/legal-timeline"
