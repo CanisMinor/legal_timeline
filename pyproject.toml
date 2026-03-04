@@ -1,0 +1,33 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name        = "legal-timeline"
+version     = "0.1.0"
+description = "Extract, categorise, and visualise key dates from legal Word documents."
+readme      = "README.md"
+requires-python = ">=3.10"
+license     = {text = "MIT"}
+
+dependencies = [
+    # Core
+    "python-docx>=1.1",
+
+    # Date parsing — dateparser is strongly preferred over dateutil alone.
+    # It handles written-out ordinals ("thirty-first of January"), many
+    # locales, and highly varied formats found in international contracts.
+    # dateutil is kept as an automatic fallback if dateparser is absent.
+    "dateparser>=1.2",
+    "python-dateutil>=2.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+
+[project.urls]
+Homepage = "https://github.com/your-org/legal-timeline"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["legal_timeline*"]
